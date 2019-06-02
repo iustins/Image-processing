@@ -1,1 +1,11 @@
 # Image-processing
+
+Lerp:
+In n retin lungimea vectorului unidimensional v dat ca parametru.Verific daca x apartine intervalului [1,n].Daca x este un numar intreg (x este egal cu partea sa intreaga) atunci functia va intoarce v(x).Daca x nu e intreg atunci calculez ecuatia dreptei care trece prin punctele pint si pint+1 ,unde pint e partea intreaga a lui x,intrucat x apartine cu siguranta acestui interval.Ma folosesc de ecuatia dreptei astfel obtinute pentru a estima valoarea functiei in punctul x,punand valoarea lui x in ecuatia dreptei.Daca x nu apartine intervalul [1,n] ,functia va intoarce valoarea 0.
+
+Bilerp:
+In m retin numarul de linii ale matricei img iar n retin numarul de coloane ale matricei img.Parcurg toate punctele din matricea img.In vectorul v retin valorile functiei corespunzatoare punctelor de forma (i,j) din matricea img.Pentru fiecare linie i ,trebuie sa realizez o interpolare pe directia x astfel ca in rez(i) memorez valoarea functiei lerp pentru vectorul v si coloana col.Dupa ce am calculat cele m valori din vectorul rez,realizez interpolarea pe directia y astfel ca in value se va retine rezultatul functiei lerp pentru parametrii rez si row.
+
+Forward mapping:
+Trebuie sa calculez xmin si ymin,care reprezinta cei mai mici indici pentru liniile/coloanele din matricea pe care vrem sa o obtinem.Initializez xmin si ymin cu o valoare foarte mare (1000000) pentru a fi sigur ca valoarea acestora se va modifica ulterior.Parcurg toti indicii matricei img_in pentru a putea calcula indicii minimi pentru linii/coloane ,utilizand formula transformarii date.Daca gasesc o valoare mai mica decat minimul anterior minimul devine respectiva valoare.
+Ulterior,parcurg din nou indicii matricei img_in pentru a calcula pozitiile din noua matrice astfel incat sa nu am indici negativi.Pentru a nu avea indici negativi trebuie sa scad minimul liniilor/coloanelor si sa adaug 1(minimul expresiei a*x+b*y este xmin deci a*x+b*y-xmin+1 va fi mereu pozitiv).Aplic acelasi rationament pentru a avea numai indici pozitivi si la coloane.In indicelin,respectiv indicecol,voi avea pozitiile "finale" pentru noua matrice si voi putea face trecerea corespunzatoare a intensitatii luminii unui pixel din matricea img_in in matricea img_out. 
